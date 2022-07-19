@@ -2,16 +2,20 @@ const mongoose = require("mongoose");
 
 const roomSchema = new mongoose.Schema(
   {
-    title: {
+    type: {
       type: String,
-      required: [true, "A room must have a title"],
-      minlength: 4,
-      maxlength: 55,
+      required: [true, "A room must have a type"],
+      enum:["Single","Twin","Deluxe","Suite"],
+    },
+    title:{
+      type:String,
+      required:[true,"A room must have a title"],
     },
     price: {
       type: Number,
       required: [true, "A room must have a price"],
     },
+    
     desc: { type: String, required: [true, "A room must have a description"] },
     maxPeople: {
       type: Number,
