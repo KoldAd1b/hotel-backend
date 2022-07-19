@@ -22,7 +22,7 @@ const verifyToken = (req, res, next) => {
 
 const checkUserPermissions = (req, res, next) =>
   verifyToken(req, res, () => {
-    if (req.user.id === req.params.id || req.user.role === "admin") {
+    if (req.user.id === req.params.id || req.user.role === "admin" || req.user.role === "staff") {
       return next();
     } else {
       throw new CustomError.UnauthorizedError(

@@ -6,7 +6,7 @@ const HotelSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    type: {
+    country: {
       type: String,
       required: true,
     },
@@ -15,10 +15,6 @@ const HotelSchema = new mongoose.Schema(
       required: true,
     },
     address: {
-      type: String,
-      required: true,
-    },
-    distance: {
       type: String,
       required: true,
     },
